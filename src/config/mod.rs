@@ -4,7 +4,6 @@ use figment::{
 };
 use lazy_static::lazy_static;
 use serde::{Deserialize, Serialize};
-use serde_json::Result;
 use std::net::Ipv4Addr;
 
 #[derive(Debug, Deserialize, Serialize)]
@@ -31,10 +30,9 @@ impl Config {
             .extract()
             .expect("Server configuration")
     }
-    pub fn print(&self) -> Result<()> {
-        let config = serde_json::to_string(&self)?;
+    pub fn print(&self) {
+        let config = serde_json::to_string(&self).unwrap();
         println!("{}", config);
-        Ok(())
     }
 }
 
