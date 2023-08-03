@@ -18,7 +18,7 @@ impl Default for Config {
         Config {
             listen_addr: Ipv4Addr::new(127, 0, 0, 1).to_owned(),
             port: 3000.to_owned(),
-            loglevel: "info".to_string(),
+            loglevel: "info".to_owned(),
         }
     }
 }
