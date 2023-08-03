@@ -19,7 +19,6 @@ Design considerations:
 ```rust
 use crate::config::SETTINGS;
 fn main() {
-    let foo: String = SETTINGS.hostname;
-    println!("{}", foo)
+    println!("{}", SETTINGS.listen_addr)
 }
 ```
