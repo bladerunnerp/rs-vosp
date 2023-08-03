@@ -10,7 +10,7 @@ use std::net::Ipv4Addr;
 pub struct Config {
     pub listen_addr: Ipv4Addr,
     pub port: u16,
-    pub loglevel: Option<String>,
+    pub loglevel: String,
 }
 
 impl Default for Config {
@@ -18,7 +18,7 @@ impl Default for Config {
         Config {
             listen_addr: Ipv4Addr::new(127, 0, 0, 1).to_owned(),
             port: 3000.to_owned(),
-            loglevel: Some("info".to_string()),
+            loglevel: "info".to_string(),
         }
     }
 }
@@ -26,7 +26,7 @@ impl Default for Config {
 impl Config {
     pub fn init() -> Config {
         Figment::from(Serialized::defaults(Config::default()))
-            .merge(Env::prefixed("AUTH_"))
+            .merge(Env::prefixed("APP_"))
             .extract()
             .expect("Server configuration")
     }

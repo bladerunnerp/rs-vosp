@@ -8,8 +8,8 @@ use log::info;
 #[tokio::main]
 async fn main() {
     let cli = Cli::init();
-
-    logging::init(cli.loglevel);
+    let loglevel = &SETTINGS.loglevel;
+    logging::init(loglevel);
 
     info!("Initialized...");
 
