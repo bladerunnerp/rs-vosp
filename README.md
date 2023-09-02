@@ -10,6 +10,13 @@ This is the basics:
 
 Just fork, clone, and start your own app using this as a foundation. (or don't, I made this for me)
 
+A better approach would be to use `cargo generate`:
+
+```
+cargo install cargo-generate
+cargo generate bladerunnerp/rs-vosp
+```
+
 Design considerations:
 
 - Each module is self contained and can be dropped directly into existing projects
