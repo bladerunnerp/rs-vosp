@@ -2,18 +2,18 @@
 
 A Very Opinionated Starting Point for Rust projects.
 
-This is the basics:
-
-- configuration through environment vars with defaults
-- simple logging
-- Cli module with one command to print the configuration to console as json
-
-Use with `cargo generate`:
+For Use with `cargo generate`:
 
 ```
 cargo install cargo-generate
 cargo generate bladerunnerp/rs-vosp-template
 ```
+
+This is the basics:
+
+- configuration through environment vars with defaults
+- simple logging
+- Cli module with one command to print the configuration to console as json
 
 Design considerations:
 
