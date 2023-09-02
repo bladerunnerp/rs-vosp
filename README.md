@@ -1,4 +1,4 @@
-# rs-vosp
+# rs-vosp-template
 
 A Very Opinionated Starting Point for Rust projects.
 
@@ -8,13 +8,11 @@ This is the basics:
 - simple logging
 - Cli module with one command to print the configuration to console as json
 
-Just fork, clone, and start your own app using this as a foundation. (or don't, I made this for me)
-
-A better approach would be to use `cargo generate`:
+Use with `cargo generate`:
 
 ```
 cargo install cargo-generate
-cargo generate bladerunnerp/rs-vosp
+cargo generate bladerunnerp/rs-vosp-template
 ```
 
 Design considerations:
@@ -28,4 +26,14 @@ use crate::config::SETTINGS;
 fn main() {
     println!("{}", SETTINGS.listen_addr)
 }
+```
+
+Example usage:
+
+```bash
+cargo run -- -p
+```
+
+```bash
+{"listen_addr":"127.0.0.1","port":3000,"loglevel":"info"}
 ```

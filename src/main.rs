@@ -13,6 +13,5 @@ async fn main() {
 
     if cli.print_config == true {
         SETTINGS.print();
-        SETTINGS.print()
     }
 }

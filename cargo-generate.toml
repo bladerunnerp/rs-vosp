@@ -1,0 +1,24 @@
+[template]
+
+# Examples: https://docs.rs/semver/latest/semver/enum.Op.html
+cargo_generate_version = ">=0.12"
+
+[hooks]
+post = [
+    "post.rhai",
+]
+
+[placeholders.short_description]
+type = "string"
+prompt = "A Very Opinionated Starting Point"
+
+[placeholders.use_default_licensing]
+type = "bool"
+prompt = "Use the default licensing of `MIT OR Apache-2.0`"
+default = true
+
+[conditional.'crate_type == "lib"']
+ignore = [ "src/main.rs" ]
+
+[conditional.'crate_type == "bin"']
+ignore = [ "src/lib.rs" ]
