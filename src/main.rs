@@ -12,6 +12,7 @@ async fn main() {
     info!("Initialized.");
 
     if cli.print_config == true {
+        SETTINGS.print();
         SETTINGS.print()
     }
 }
